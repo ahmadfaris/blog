@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   get  'resume'  => 'landing#resume'
   get  'about'   => 'landing#aboutme'
   get  'contact'   => 'landing#contact'
-  resources :posts
+  
+  resources :posts do
+  	resources :comments
+  end
 end
