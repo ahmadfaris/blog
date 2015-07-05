@@ -24,9 +24,25 @@
                   <li>
                       <%= link_to "Contact", contact_path %>
                   </li>
-                  <li>
-                      <a href="#">Log In</a>
-                  </li>
+                  <% if user_signed_in? %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        User Menu <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <%= link_to "New Post", new_post_path %>
+                        </li>
+                        <li>
+                          <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+                        </li>
+                      </ul>
+                    </li>
+                  <% else %>
+                    <li>
+                      <%= link_to "Log In", new_user_session_path %>
+                    </li>
+                  <% end %>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
