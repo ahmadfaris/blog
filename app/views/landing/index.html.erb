@@ -35,6 +35,38 @@
       </div>
     </div>
   </header>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <% @posts.each do |post| %>
+          <div class="post-preview">
+              <a href="post.html">
+                  <h2 class="post-title">
+                      <%= link_to post.title, post %>
+                  </h2>
+                  <h3 class="post-subtitle">
+                      Problems look mighty small from 150 miles up
+                  </h3>
+              </a>
+              <p class="post-meta">Posted by <a href="#">Ahmad Faris</a> <%= post.created_at.strftime("%B, %d, %Y")%></p>
+          </div>
+          <hr>
+          <% end %>
+          <!-- Pager -->
+          <ul class="pager">
+              <li class="next">
+                  <a href="#">Older Posts &rarr;<%= paginate @posts %></a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+    <hr>
+
+
+
 </body>
 
 </html>

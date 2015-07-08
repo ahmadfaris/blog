@@ -4,5 +4,11 @@ class LandingController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+  	@posts = Post.all.order('created_at DESC').page(params[:page]).per(5)
   end
+
+  def show
+  	@post = Post.find(params[:id])
+  end
+  
 end
