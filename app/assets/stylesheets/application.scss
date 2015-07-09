@@ -3,7 +3,7 @@
 @import "bootstrap";
 @import "clean-blog";
 @import "resume";
-
+@import "posts";
 @import "form";
 
 
@@ -14,7 +14,7 @@ body {
 	margin-top: 50px;
 }
 .pagination{
-	padding: 60px;
+	padding: 60px 0px;
 	margin: 0;
 	color: #33acb7;
 }
